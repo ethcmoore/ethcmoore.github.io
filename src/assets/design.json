@@ -1,0 +1,47 @@
+[
+  {
+    "name": "roeWade",
+    "pages": [
+      "roeWade_Page_1.jpg",
+      "roeWade_Page_2.jpg",
+      "roeWade_Page_3.jpg",
+      "roeWade_Page_4.jpg"
+    ]
+  },
+  {
+    "name": "nurses",
+    "pages": [
+      "nurses_Page_1.jpg",
+      "nurses_Page_2.jpg"
+    ]
+  },
+  {
+    "name": "electionsGuide",
+    "pages": [
+      "electionsGuide_Page_1.jpg",
+      "electionsGuide_Page_2.jpg",
+      "electionsGuide_Page_3.jpg",
+      "electionsGuide_Page_4.jpg",
+      "electionsGuide_Page_5.jpg",
+      "electionsGuide_Page_6.jpg"
+    ]
+  },
+  {
+    "name": "police",
+    "pages": [
+      "police.jpg"
+    ]
+  },
+  {
+    "name": "prisonBooks",
+    "pages": [
+      "prisonBooks.jpg"
+    ]
+  },
+  {
+    "name": "sports",
+    "pages": [
+      "sportsPage.jpg"
+    ]
+  }
+]

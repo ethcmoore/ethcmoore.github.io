@@ -1,0 +1,493 @@
+/***********************************************************/
+/** Set Up **/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #232323;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/***********************************************************/
+/** Header **/
+
+header {
+  padding: 2.0rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100px;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #232323;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header div {
+  flex-basis: 200px;
+  text-align: left;
+}
+
+nav {
+  position: relative;
+  margin-top: 0;
+}
+
+.lead {
+  display: none;
+}
+
+.namePlate,
+.lead {
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.namePlate {
+  font-size: 60px;
+  line-height: 49px;
+  font-weight: 900;
+  margin-top: -11px;
+  margin-bottom: .25rem;
+}
+
+.lead {
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 100;
+  display: none;
+}
+
+nav p {
+  text-transform: uppercase;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+p.active {
+  color: #DB9664;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+nav p:hover {
+  color: #DB9664;
+  cursor: pointer;
+}
+
+/***********************************************************/
+/** Photo & Design Gallery **/
+
+.gallery {
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  padding: 0 2.0rem 1.0rem;
+}
+
+.photoGallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo:hover {
+  cursor: zoom-in;
+}
+
+.photo img {
+  margin-bottom: -3px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+figure.photo {
+  position: relative;
+}
+
+.photo figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(1, 1, 1, .9);
+  font-weight: 100;
+  font-size: 14px;
+  padding: 1.0rem;
+  line-height: 18px;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.photoFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: .75rem;
+  row-gap: 0.75rem;
+  margin-bottom: 1.0rem;
+}
+
+.photoFilterOption {
+  font-size: 14px;
+  flex-shrink: 0;
+  line-height: .8;
+  padding: 0.5rem 1.5rem 0.6rem;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+.photoFilterOption:hover {
+  cursor: pointer;
+  color: #DB9664;
+  border-color: #DB9664;
+}
+
+.activeFilter {
+  background-color: #DB9664;
+  border-color: #DB9664;
+  color: white;
+}
+
+.activeFilter:hover {
+  color: white;
+}
+
+.photoModal {
+  z-index: 1000;
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 1, 1, .9);
+  padding: 1.0rem;
+}
+
+.modalShow {
+  display: flex;
+  overflow: hidden;
+}
+
+.photoModal figure {
+  /* margin: 2.0rem; */
+  align-items: center;
+  max-height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.photoModal figcaption {
+  max-width: 900px;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.photoModal figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  max-height: 88vh;
+}
+
+.photoModal svg {
+  position: absolute;
+  top: 3.0rem;
+  right: 3.0rem;
+  font-size: 36px;
+}
+
+.photoModal svg:hover {
+  cursor: pointer;
+}
+
+.designGallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 0.75rem;
+}
+
+.designGallery img {
+  width: 100%;
+}
+
+.designGallery figure {
+  position: relative;
+}
+
+.indexCircleBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(1, 1, 1, .5);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .5rem 0;
+  /* margin-bottom: 1.0rem; */
+}
+
+.rightArrow,
+.leftArrow {
+  font-size: 20px;
+  color: white;
+}
+
+.indexCircles {
+  display: flex;
+  gap: .25rem;
+  padding: .5rem;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.circleActive {
+  background-color: #DB9664;
+}
+
+.captionShow {
+  display: flex !important;
+}
+
+.rightArrow:hover,
+.leftArrow:hover,
+.circle:hover {
+  cursor: pointer;
+}
+
+/***********************************************************/
+/** Resume **/
+
+.resume {
+  padding: 0;
+}
+
+.resumeMain {
+  padding: 0;
+}
+
+.resume section {
+  margin-bottom: .75em;
+}
+
+.resumeMain div {
+  margin-bottom: 2.0rem;
+}
+
+.resume ul {
+  margin-left: 2.0rem;
+  margin-top: 0.25rem;
+}
+
+.resume li {
+  margin-bottom: .25rem;
+  font-size: 16px;
+}
+
+.resume h1 {
+  font-size: 48px;
+  line-height: 38px;
+  margin-bottom: 1.0rem;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed";
+}
+
+.resume h2 {
+  font-size: 24px;
+  line-height: 25px;
+  margin-bottom: 0.5rem;
+}
+
+.resume p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.resume span {
+  font-style: italic;
+  font-weight: 100;
+  margin-left: 1.0rem;
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.0rem;
+  margin-bottom: 2.0rem;
+}
+
+.about img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.contact {
+  display: flex;
+  gap: 2.0rem;
+  justify-content: center;
+  margin-top: 1.0rem;
+}
+
+.contact svg {
+  font-size: 30px;
+}
+
+.contact a {
+  color: white;
+}
+
+.contact a:hover {
+  color: #DB9664;
+}
+
+/***********************************************************/
+/** Media Queries **/
+
+@media (min-width: 480px) {
+  .designGallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 550px) {
+  .photoFilters {
+    column-gap: 1.5rem;
+  }
+
+  .photoFilterOption {
+    font-size: 16px;
+  }
+
+  .about {
+    flex-direction: row;
+    max-width: 1000px;
+  }
+
+  .contact {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 700px) {
+  .photoGallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.75rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .gallery {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  #root {
+    height: 100vh;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  main {
+    padding: 2.0rem 0;
+  }
+
+  header {
+    padding: 2.0rem 0 2.0rem 2.0rem;
+    flex-basis: 210px;
+    flex-direction: column;
+
+  }
+
+  .lead {
+    display: block;
+  }
+
+  .namePlate {
+    font-size: 70px;
+    line-height: 60px;
+    font-weight: 900;
+  }
+
+  nav {
+    margin-top: 2.0rem;
+  }
+
+  nav p {
+    line-height: 40px;
+  }
+
+  .designGallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .photoModal figure {
+    padding: 2.0rem 0 .5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .photoGallery figcaption {
+    padding: 1.0rem 3.0rem;
+  }
+
+  .designGallery {
+    padding: 0 7.0rem;
+  }
+
+  .photoModal figure {
+    padding: 0 2.0rem;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .photoModal figcaption {
+    max-width: 300px;
+    padding: 0 0.5rem 0 0;
+  }
+
+  .about img {
+    width: 250px;
+  }
+}
