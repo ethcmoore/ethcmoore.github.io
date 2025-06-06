@@ -75,9 +75,9 @@ const Gallery = ({ pageState }) => {
                 <section className="gallery photoGallery">
                     <div className="photoFilters" style={{ gridColumn: "span 2" }}>
                         <p className={photoView == "best" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterBest}>Selects</p>
-                        <p className={photoView == "jacobs" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterJacobs}>Jacobs School Assualt Investigation</p>
+                        <p className={photoView == "jacobs" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterJacobs}>JSoM Assualt Investigation</p>
                         <p className={photoView == "hocoParade" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterHocoParade}>2022 IU homecoming Parade</p>
-                        <p className={photoView == "foodBank" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterFoodBank}>Pantry 279 Food Bank</p>
+                        <p className={photoView == "foodBank" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterFoodBank}>Pantry 279</p>
                         <p className={photoView == "roeProtest" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterRoeProtest}>Protest for Abortion Rights</p>
                     </div>
                     {
