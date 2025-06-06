@@ -6,7 +6,7 @@ const Design = ({ design, index }) => {
     if (design.pages.length == 1) {
         return (
             <figure key={index}>
-                <img src={`src/assets/images/design/${design.pages[0]}`} />
+                <img src={design.pages[0]} />
             </figure>
         )
     } else {
@@ -32,7 +32,7 @@ const Design = ({ design, index }) => {
 
         return (
             <figure key={index}>
-                <img src={`src/assets/images/design/${design.pages[designIndex]}`} />
+                <img src={design.pages[designIndex]} />
                 <div className="indexCircleBox">
                     <BsChevronLeft className="leftArrow" onMouseUp={slideLeft} />
                     <div className="indexCircles">
