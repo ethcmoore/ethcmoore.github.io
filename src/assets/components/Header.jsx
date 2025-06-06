@@ -8,7 +8,7 @@ const Header = ({ pageState, pageChangers }) => {
             </div>
             <nav>
                 <p className={pageState == "resume" ? 'active' : ''} onClick={pageChangers.changePageResume}>Resume</p>
-                <p className={pageState == "photo" ? 'active' : ''} onClick={pageChangers.changePagePhoto}>Photograhy</p >
+                <p className={pageState == "photo" ? 'active' : ''} onClick={pageChangers.changePagePhoto}>Photography</p >
                 <p className={pageState == "design" ? 'active' : ''} onClick={pageChangers.changePageDesign}>Print Design</p>
             </nav >
         </header >

@@ -26,6 +26,7 @@ html {
 
 header {
   padding: 2.0rem;
+  padding-bottom: 0.5rem;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 100px;
@@ -47,6 +48,7 @@ header div {
 nav {
   position: relative;
   margin-top: 0;
+  flex-shrink: 0;
 }
 
 .lead {
