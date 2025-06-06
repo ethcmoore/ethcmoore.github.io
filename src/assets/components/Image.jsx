@@ -12,7 +12,7 @@ const Image = ({ image, index, setModalPhoto, setModalShow }) => {
     return (
         <>
             <figure key={index} onMouseEnter={() => { setShowPhoto(true) }} onMouseLeave={() => { setShowPhoto(false) }} className={image.vertical ? 'photo vertical' : 'photo'} onMouseUp={() => openModal(image)}>
-                <img src={`src/assets/images/${image.previewPath}`} />
+                <img src={image.previewPath} />
                 <figcaption className={showPhoto ? 'captionShow' : ''}>{image.caption}</figcaption>
             </figure>
         </>

@@ -10,7 +10,7 @@ const PhotoModal = ({ photo, modalShow, setModalShow, setModalPhoto }) => {
         <div className={modalShow ? "photoModal modalShow" : "photoModal"}>
             <IoClose onMouseUp={closeModal} />
             <figure>
-                <img src={`src/assets/images/${photo.imagePath}`} alt="" />
+                <img src={photo.imagePath} alt="" />
                 <figcaption>{photo.caption}</figcaption>
             </figure>
         </div>
