@@ -1,22 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from './Image.jsx';
 import PhotoModal from './PhotoModal.jsx';
 import Design from './Design.jsx';
-import Resume from "./Resume";
+import WebDesign from './WebDesign.jsx';
+import Resume from "./Resume.jsx";
+import FilterBar from './FilterBar.jsx';
 import photos from '../photos.json';
 import designs from '../design.json';
+import webclips from '../webclips.json';
 
 const Gallery = ({ pageState }) => {
 
+    useEffect(() => { window.scrollTo(0, 0) });
+
+    const [photoView, setPhotoView] = useState("best");
+    const [modalPhoto, setModalPhoto] = useState(0);
+    const [modalShow, setModalShow] = useState(false);
+    function changeFilterBest() { setPhotoView("best") };
+    function changeFilterJacobs() { setPhotoView("jacobs") };
+    function changeFilterHocoParade() { setPhotoView("hocoParade") };
+    function changeFilterFoodBank() { setPhotoView("foodBank") };
+    function changeFilterRoeProtest() { setPhotoView("roeProtest") };
+
+    const [designView, setDesignView] = useState("print");
+    function changeFilterPrint() { setDesignView("print") };
+    function changeFilterWeb() { setDesignView("web") };
+
+    let filterChagers = { changeFilterBest, changeFilterJacobs, changeFilterHocoParade, changeFilterFoodBank, changeFilterRoeProtest, changeFilterPrint, changeFilterWeb };
+
     if (pageState == "design") {
-        return (
-            <section className="gallery designGallery">
-                {designs.map((design, index) => (
-                    <Design design={design} key={index} />
-                ))
-                }
-            </section>
-        )
+        if (designView == "print") {
+            return (
+                <section className="gallery designGallery">
+                    <FilterBar pageState={pageState} filterChagers={filterChagers} View={designView} />
+                    {designs.map((design, index) => (
+                        <Design design={design} key={index} />
+                    ))
+                    }
+                </section>
+            )
+        } else if (designView == "web") {
+            return (
+                <section className="gallery designGallery">
+                    <FilterBar pageState={pageState} filterChagers={filterChagers} View={designView} />
+                    {webclips.map((design, index) => (
+                        <WebDesign design={design} key={index} />
+                    ))
+                    }
+                </section>
+            )
+        }
     } else if (pageState == "resume") {
         return (
             <div className="gallery">
@@ -24,18 +57,6 @@ const Gallery = ({ pageState }) => {
             </div>
         )
     } else if (pageState == "photo") {
-
-        const [photoView, setPhotoView] = useState("best");
-        const [modalPhoto, setModalPhoto] = useState(0);
-        const [modalShow, setModalShow] = useState(false);
-
-        function changeFilterBest() { setPhotoView("best") };
-        function changeFilterJacobs() { setPhotoView("jacobs") };
-        function changeFilterHocoParade() { setPhotoView("hocoParade") };
-        function changeFilterFoodBank() { setPhotoView("foodBank") };
-        function changeFilterRoeProtest() { setPhotoView("roeProtest") };
-
-
         const images = [];
 
         if (photoView == "best") {
@@ -73,13 +94,7 @@ const Gallery = ({ pageState }) => {
         return (
             <>
                 <section className="gallery photoGallery">
-                    <div className="photoFilters" style={{ gridColumn: "span 2" }}>
-                        <p className={photoView == "best" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterBest}>Selects</p>
-                        <p className={photoView == "jacobs" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterJacobs}>JSoM Assualt Investigation</p>
-                        <p className={photoView == "hocoParade" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterHocoParade}>2022 IU homecoming Parade</p>
-                        <p className={photoView == "foodBank" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterFoodBank}>Pantry 279</p>
-                        <p className={photoView == "roeProtest" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={changeFilterRoeProtest}>Protest for Abortion Rights</p>
-                    </div>
+                    <FilterBar pageState={pageState} filterChagers={filterChagers} View={photoView} />
                     {
                         images.map((image, index) => (
                             <Image image={image} key={index} setModalPhoto={setModalPhoto} setModalShow={setModalShow} />
