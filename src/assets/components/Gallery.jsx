@@ -3,11 +3,13 @@ import Image from './Image.jsx';
 import PhotoModal from './PhotoModal.jsx';
 import Design from './Design.jsx';
 import WebDesign from './WebDesign.jsx';
+import DataViz from './DataViz.jsx';
 import Resume from "./Resume.jsx";
 import FilterBar from './FilterBar.jsx';
 import photos from '../photos.json';
 import designs from '../design.json';
 import webclips from '../webclips.json';
+import dataviz from '../dataviz.json';
 
 const Gallery = ({ pageState }) => {
 
@@ -25,8 +27,9 @@ const Gallery = ({ pageState }) => {
     const [designView, setDesignView] = useState("print");
     function changeFilterPrint() { setDesignView("print") };
     function changeFilterWeb() { setDesignView("web") };
+    function changeFilterData() { setDesignView("data") };
 
-    let filterChagers = { changeFilterBest, changeFilterJacobs, changeFilterHocoParade, changeFilterFoodBank, changeFilterRoeProtest, changeFilterPrint, changeFilterWeb };
+    let filterChagers = { changeFilterBest, changeFilterJacobs, changeFilterHocoParade, changeFilterFoodBank, changeFilterRoeProtest, changeFilterPrint, changeFilterWeb, changeFilterData };
 
     if (pageState == "design") {
         if (designView == "print") {
@@ -45,6 +48,16 @@ const Gallery = ({ pageState }) => {
                     <FilterBar pageState={pageState} filterChagers={filterChagers} View={designView} />
                     {webclips.map((design, index) => (
                         <WebDesign design={design} key={index} />
+                    ))
+                    }
+                </section>
+            )
+        } else if (designView == "data") {
+            return (
+                <section className="gallery designGallery">
+                    <FilterBar pageState={pageState} filterChagers={filterChagers} View={designView} />
+                    {dataviz.map((design, index) => (
+                        <DataViz design={design} key={index} />
                     ))
                     }
                 </section>
