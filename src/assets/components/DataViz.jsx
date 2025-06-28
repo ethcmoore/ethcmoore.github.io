@@ -1,4 +1,4 @@
-const WebDesign = ({ design, index }) => {
+const DataViz = ({ design, index }) => {
     return (
         <a href={design.url} target="blank" className="webDesign">
             <figure>
@@ -8,4 +8,4 @@ const WebDesign = ({ design, index }) => {
     )
 }
 
-export default WebDesign
+export default DataViz
