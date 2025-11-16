@@ -1,5 +1,5 @@
 import headshot from "../images/headshot.jpg";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 
 const Resume = () => {
     return (
@@ -8,7 +8,7 @@ const Resume = () => {
                 <img src={headshot} alt="" />
                 <div>
                     <p>Hello! I'm Ethan, a multimedia journalist based in central Indiana. I'm deeply interested in exploring the intersection of reporting and information technology, specifically the different ways journalists can package information for audiences. I have experience with photojournalism, web development, design, data visualization and reporting.</p>
-                    <div className="contact"><a href="https://www.linkedin.com/in/ethcmoore/" target="blank"><FaLinkedin /></a><a href="mailto:ethcmoore@gmail.com"><FaEnvelope /></a></div>
+                    <div className="contact"><a href="https://www.linkedin.com/in/ethcmoore/" target="blank"><FaLinkedin /></a><a href="mailto:ethcmoore@gmail.com" target="blank"><FaEnvelope /></a><a href="https://github.com/ethcmoore" target="blank"><FaGithub /></a></div>
                 </div>
             </div>
             <div className="resumeMain">
