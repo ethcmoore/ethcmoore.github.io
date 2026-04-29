@@ -164,6 +164,7 @@ figure.photo {
   padding: 0.5rem 1.5rem 0.6rem;
   border: 2px solid white;
   border-radius: 50px;
+  max-height: 35px;
 }
 
 .photoFilterOption:hover {
