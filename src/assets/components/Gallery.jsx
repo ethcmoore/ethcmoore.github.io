@@ -80,8 +80,8 @@ const Gallery = ({ pageState }) => {
                     images.push(image);
                 }
             });
-            storyTitle = "Photo Selects";
-            storyDescription = "Photojournalism has been my true love since I picked up a DSLR for the first time on my high school yearbook staff.";
+            storyTitle = "Photojournalism Selects";
+            storyDescription = "Check out some of my best shots from previous assignments and projects.";
             // } else if (photoView == "jacobs") {
             //     photos.forEach((image) => {
             //         if (image.jacobs) {
@@ -95,7 +95,7 @@ const Gallery = ({ pageState }) => {
                 }
             });
             storyTitle = "2022 IU Homecoming Parade";
-            storyDescription = "I covered the annual homecoming parade for the Arbutus yearbook and took the opportunity to package the photos into a web gallery for the IDS as well.";
+            storyDescription = "I covered the annual homecoming parade for IU’s Arbutus yearbook, a sister publication to the IDS that relied heavily on collaboration between the two.";
         } else if (photoView == "foodBank") {
             photos.forEach((image) => {
                 if (image.foodBank) {
@@ -103,22 +103,22 @@ const Gallery = ({ pageState }) => {
                 }
             });
             storyTitle = "Pantry 279 Prepares for the 2022 Christmas Season";
-            storyDescription = "I spent time with a local food pantry as the volunteers and staff geared up for the holiday season and their community gift giving program.";
+            storyDescription = "I spent time with a local food pantry as the volunteers and staff geared up for the holiday season and their gift giving program. This project was for a photojournalism course and allowed me to immerse myself in the local community.";
         } else if (photoView == "roeProtest") {
             photos.forEach((image) => {
                 if (image.roeProtest) {
                     images.push(image);
                 }
             });
-            storyTitle = "Protest for Abortion Rights After SCOTUS Overtuns Roe v. Wade";
-            storyDescription = "I was editor-in-chief of the IDS the summer when Roe v. Wade was overturned. This was the largest demonstration I covered while reporting on the community's reactions in the following weeks.";
+            storyTitle = "Protest After SCOTUS Overturns Roe v. Wade";
+            storyDescription = "I was editor-in-chief of the IDS the summer when Roe v. Wade was overturned. This was the largest demonstration for abortion rights I covered while reporting on the community's reactions in the following weeks.";
         }
 
         return (
             <>
                 <section className="gallery photoGallery">
                     <FilterBar pageState={pageState} filterChagers={filterChagers} View={photoView} />
-                    <div style={{ gridColumn: "span 2" }}>
+                    <div className="photoStoryDesc">
                         <h2>{storyTitle}</h2>
                         <p>{storyDescription}</p>
                     </div>

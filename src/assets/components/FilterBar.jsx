@@ -12,9 +12,9 @@ const FilterBar = ({ pageState, filterChagers, View }) => {
     } else if (pageState == "design") {
         return (
             <div className="designFilters">
-                <p className={View == "print" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={filterChagers.changeFilterPrint}>Print Layout</p>
                 <p className={View == "web" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={filterChagers.changeFilterWeb}>Web Design</p>
                 <p className={View == "data" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={filterChagers.changeFilterData}>Data Visualization</p>
+                <p className={View == "print" ? "photoFilterOption activeFilter" : "photoFilterOption"} onMouseUp={filterChagers.changeFilterPrint}>Print Layout</p>
             </div>
         )
     }

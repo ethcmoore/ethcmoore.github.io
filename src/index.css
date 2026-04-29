@@ -71,7 +71,7 @@ header div {
 }
 
 .lead {
-  font-size: 22px;
+  font-size: 23.1px;
   line-height: 22px;
   font-weight: 100;
   display: none;
@@ -180,6 +180,13 @@ figure.photo {
 
 .activeFilter:hover {
   color: white;
+}
+
+.photoStoryDesc {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  grid-column: span 2;
 }
 
 .photoModal {
@@ -328,7 +335,7 @@ figure.photo {
   margin-bottom: 2.0rem;
 }
 
-.resume ul {
+.resumeBody ul {
   margin-left: 2.0rem;
   margin-top: 0.25rem;
 }
@@ -393,6 +400,24 @@ figure.photo {
 }
 
 .contact a:hover {
+  color: #DB9664;
+}
+
+.writingClips {
+  margin-left: 0.5rem;
+}
+
+.writingClips li {
+  list-style-type: none;
+  margin-bottom: 1.0rem;
+}
+
+.writingClips a {
+  color: white;
+  text-decoration: underline #DB9664 2px;
+}
+
+.writingClips a:hover {
   color: #DB9664;
 }
 
@@ -526,5 +551,13 @@ figure.photo {
 
   .about img {
     width: 250px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .resumeMain {
+    display: flex;
+    flex: row nowrap;
+    gap: 2.0em;
   }
 }

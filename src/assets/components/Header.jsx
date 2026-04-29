@@ -3,7 +3,7 @@ const Header = ({ pageState, pageChangers }) => {
         <header>
             <div>
                 <h1 className="namePlate">Ethan Moore</h1>
-                <p className="lead">Multiemedia Reporter</p>
+                <p className="lead">Multimedia Reporter</p>
             </div>
             <nav>
                 <p className={pageState == "photo" ? 'active' : ''} onClick={pageChangers.changePagePhoto}>Photography</p >
